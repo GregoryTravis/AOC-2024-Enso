@@ -1,0 +1,37 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Examples
+import Standard.Visualization
+
+main =
+    node1 = enso_project.data/'input.txt' . read
+    node4 = node1.split '\n'
+    node8 = node4.take 1000
+    node7 = node8.map (x-> x.split " ") . map (x-> [x.at 0, x.at 3])
+    node2 = node7.map (x-> x.at 0)
+    node3 = Column.from_vector "a" node2
+    node6 = node7.map (x-> x.at 1)
+    node5 = Column.from_vector "b" node6
+    column1 = node3.parse
+    column2 = node5.parse
+    node13 = column1.sort
+    column3 = column2.sort
+    node10 = node13.- column3
+    node12 = node10.map .abs
+    any2 = node12.compute ..Sum
+    node11 = Table.new [column1, column2]
+    table1 = node11.join node11 ..Inner [(..Equals 'a' 'b')]
+    node9 = table1.at "Right b"
+    any1 = node9.compute ..Sum
+    text1 = "part one"
+    text2 = "part two"
+
+
+
+#### METADATA ####
+[[{"index":{"value":270},"size":{"value":36}},"f7125036-9a54-4eeb-85f8-dbf70a3b56a2"],[{"index":{"value":319},"size":{"value":16}},"76235f06-12ad-46e7-b39f-44d496e2db53"],[{"index":{"value":348},"size":{"value":15}},"a32307f4-aab2-41e6-8f64-56fc05e21d84"],[{"index":{"value":376},"size":{"value":27}},"a509caa3-b4ec-4997-b767-e324f8af306b"],[{"index":{"value":376},"size":{"value":56}},"22711f33-c31e-46b7-a36d-5e44e8fd7252"],[{"index":{"value":445},"size":{"value":22}},"21ad830f-92f3-427e-b155-c53c31353bf1"],[{"index":{"value":480},"size":{"value":28}},"d2b19bc7-68d0-4968-8a28-450655284afa"],[{"index":{"value":521},"size":{"value":22}},"c2fba260-426c-4a0d-92cb-ca92d85956fc"],[{"index":{"value":556},"size":{"value":28}},"5394b7dc-fb06-43a2-90e0-a0dd5d7d8201"],[{"index":{"value":599},"size":{"value":11}},"a4f04e97-f205-4c26-97be-04f810e3589c"],[{"index":{"value":625},"size":{"value":11}},"c1910179-62ab-4c33-8811-4dfe4ff3435e"],[{"index":{"value":650},"size":{"value":12}},"8e2ca640-0191-4b14-bebd-4762477ff215"],[{"index":{"value":677},"size":{"value":12}},"2fb5fd38-a0b8-4aa0-ac83-0d7b4d3dc739"],[{"index":{"value":703},"size":{"value":16}},"d1c819df-d8d9-4870-8ba4-f0ca11b3b9f2"],[{"index":{"value":733},"size":{"value":15}},"c3dff811-49d6-4cdf-be47-600194704505"],[{"index":{"value":760},"size":{"value":14}},"c9606722-32a8-4ff4-8a2c-6c81b5127086"],[{"index":{"value":760},"size":{"value":20}},"0fdf1980-8957-49e3-b408-2c67036f270b"],[{"index":{"value":794},"size":{"value":28}},"bdc4bad8-97c1-456a-a5ed-06b56bd7265b"],[{"index":{"value":836},"size":{"value":11}},"8f0168fd-2df7-4dbd-8c90-df385cfcff5e"],[{"index":{"value":836},"size":{"value":18}},"cc8fa110-0e6e-4616-8996-4a42d99c94b5"],[{"index":{"value":836},"size":{"value":26}},"18d4f342-e7be-42e7-9602-3d87a194a8d4"],[{"index":{"value":836},"size":{"value":47}},"c3e83b67-e95b-485f-a2a4-d113af011a3f"],[{"index":{"value":896},"size":{"value":19}},"0cfdd10a-32d7-45ad-8afb-a6675bc4d7a4"],[{"index":{"value":927},"size":{"value":13}},"832d20d4-6c41-4fc1-89d8-30562eddb7e0"],[{"index":{"value":927},"size":{"value":19}},"a5e0766a-ea4e-42e2-a3b7-7c71bb09fc32"],[{"index":{"value":959},"size":{"value":10}},"31bc2270-de0c-4c4c-a566-a2c6569302a9"],[{"index":{"value":982},"size":{"value":10}},"b90ab5b0-cce8-4c42-8366-6356ba6676ab"]]
+{"ide":{"node":{"f7125036-9a54-4eeb-85f8-dbf70a3b56a2":{"position":{"vector":[-438,620]}},"76235f06-12ad-46e7-b39f-44d496e2db53":{"position":{"vector":[-438,548]},"visualization":{"show":false,"width":406.49609375,"height":380.15234375}},"a32307f4-aab2-41e6-8f64-56fc05e21d84":{"position":{"vector":[-438,492]}},"22711f33-c31e-46b7-a36d-5e44e8fd7252":{"position":{"vector":[-438,447]}},"a509caa3-b4ec-4997-b767-e324f8af306b":{"position":{"vector":[-464,4]}},"21ad830f-92f3-427e-b155-c53c31353bf1":{"position":{"vector":[-438,375]}},"d2b19bc7-68d0-4968-8a28-450655284afa":{"position":{"vector":[-411,303]}},"c2fba260-426c-4a0d-92cb-ca92d85956fc":{"position":{"vector":[-44,375]}},"5394b7dc-fb06-43a2-90e0-a0dd5d7d8201":{"position":{"vector":[-85,303]}},"a4f04e97-f205-4c26-97be-04f810e3589c":{"position":{"vector":[-411,228]}},"c1910179-62ab-4c33-8811-4dfe4ff3435e":{"position":{"vector":[-42,228]}},"8e2ca640-0191-4b14-bebd-4762477ff215":{"position":{"vector":[-386,130]}},"2fb5fd38-a0b8-4aa0-ac83-0d7b4d3dc739":{"position":{"vector":[-7,130]}},"d1c819df-d8d9-4870-8ba4-f0ca11b3b9f2":{"position":{"vector":[-349,26]},"visualization":{"show":false,"width":393.6328125,"height":251.23046875}},"c3dff811-49d6-4cdf-be47-600194704505":{"position":{"vector":[-327,-46]}},"0fdf1980-8957-49e3-b408-2c67036f270b":{"position":{"vector":[-327,-96]}},"c9606722-32a8-4ff4-8a2c-6c81b5127086":{"position":{"vector":[-34,-934]}},"bdc4bad8-97c1-456a-a5ed-06b56bd7265b":{"position":{"vector":[636,175]}},"c3e83b67-e95b-485f-a2a4-d113af011a3f":{"position":{"vector":[636,103]}},"18d4f342-e7be-42e7-9602-3d87a194a8d4":{"position":{"vector":[144,-118]}},"cc8fa110-0e6e-4616-8996-4a42d99c94b5":{"position":{"vector":[144,-118]}},"8f0168fd-2df7-4dbd-8c90-df385cfcff5e":{"position":{"vector":[144,-114]}},"0cfdd10a-32d7-45ad-8afb-a6675bc4d7a4":{"position":{"vector":[636,26]}},"a5e0766a-ea4e-42e2-a3b7-7c71bb09fc32":{"position":{"vector":[636,-46]}},"832d20d4-6c41-4fc1-89d8-30562eddb7e0":{"position":{"vector":[278,-468]}},"31bc2270-de0c-4c4c-a566-a2c6569302a9":{"position":{"vector":[-118,58]}},"b90ab5b0-cce8-4c42-8366-6356ba6676ab":{"position":{"vector":[466,58]}}},"widget":{},"snapshot":"eJx9kk+P0zAQxe/5FKNcspV2h6Tdv4cgLbBCXCmCQ6mqSeMuXhzb2BMa9tOjuInTFXRPsfx7783zKDtnGlgy6Zpcje/IC5CNNY6BlEp2L+gXqtQr+AMxVa8G3H9bnoYfjXlUYnNv5WnNUpv9TtHPFzOGYxQ9dNRYJfw/4Kv0LSn5TCyNTpKGpIYyAQDQphYFlCC0NxvrzJPYMtbE9CaT2raM3HEGCE5QHQ2XUB6M6K2SDNl3nUV4O8BL5L5uked5ZDcDu8WGLJx1F2+hGzJSSGeAEO9XHRJDfg7hu1jPYsh8CLk5Dum1k2QBJbw3qm009mvc/BZbNg5SSg8JUXh9IquYsq5OZFWHrOsg3AZBMaQt0JLz4oiMna+OSNhg33QwozeOjzwTmk8omPJx/wu8GMUTHWcVeXgUUuUDJP0nojluTWNbFoC4bJvJ3D8h/O2oxR5WQ7Xzscg6KLkXjI8tCnwyUo92xE9aCwerM8SHXy0pDxllkFXZbB3H3EE5hPTLTj/Lxx8MVTrWHKPv/tOSRcc9Ty05BqNFGq/n8Zr3Jk3+Aql6NDU="}}
