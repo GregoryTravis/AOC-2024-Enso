@@ -1,0 +1,22 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Examples
+import Standard.Visualization
+
+main =
+    node1 = enso_project.data/'input.txt' . read
+    node4 = Regex.compile "mul\(([0-9]+),([0-9]+)\)"
+    node6 = node4.match_all node1
+    node9 = node6.map (m-> (Integer.parse (m.groups . at 1)) * (Integer.parse (m.groups.at 2)))
+    node10 = node9.fold 0 (+)
+    text3 = "part 1"
+
+
+
+#### METADATA ####
+[[{"index":{"value":270},"size":{"value":36}},"77239c2c-7231-4d45-96e1-d4433b9fc649"],[{"index":{"value":319},"size":{"value":40}},"80da76af-2f2d-4feb-8ccd-fd1b2dbfc73e"],[{"index":{"value":372},"size":{"value":21}},"f1f36101-b41a-4b92-ad5d-95cadca7c8d7"],[{"index":{"value":406},"size":{"value":83}},"f9baf2fc-a8c0-4a76-9124-60d3f5436610"],[{"index":{"value":503},"size":{"value":16}},"98e1a2e0-0898-44df-b6bc-0b5f06efa5bc"],[{"index":{"value":532},"size":{"value":8}},"7c0cbf76-7827-4136-aef9-13fd6a43baf6"]]
+{"ide":{"node":{"77239c2c-7231-4d45-96e1-d4433b9fc649":{"position":{"vector":[-530,341]}},"80da76af-2f2d-4feb-8ccd-fd1b2dbfc73e":{"position":{"vector":[-530,138]}},"f1f36101-b41a-4b92-ad5d-95cadca7c8d7":{"position":{"vector":[-530,66]}},"f9baf2fc-a8c0-4a76-9124-60d3f5436610":{"position":{"vector":[-530,15]}},"98e1a2e0-0898-44df-b6bc-0b5f06efa5bc":{"position":{"vector":[-530,-57]},"visualization":{"show":true}},"7c0cbf76-7827-4136-aef9-13fd6a43baf6":{"position":{"vector":[-612,210]}}},"widget":{},"snapshot":"eJx9j01Lw1AQRff5FZdsmlj7bFUKXUSoKOLWil1YKdNmEp++L14mGPz1LlojRdrdhXPuXKaK3mIh5EqKpbqlhqFt8FFAxiTVAX2mjTmB70hoc/LAfLk4Dh+8rw2v50EfdxbOf1WGPg829rGX7juywXDzD7zopiWjv0m0d0liSTsUCQA4X/IEBdg1fh2i/+CtqJKELgbahVaUdDKAQmQq+8I1CjxxzZ3aehu0YaS2Nassex2PZm/D/Pw3rPK0L01R7MrKkmzf12TMbr03ZntjqiwFZHZ0g+zRCdccVaDYMDKr6ujb0ECBBJM8x9lRR5HgMs/zvz/H+4GZqrwpMUY23FHhTq5QIA0UBZM0+QGSlLDN"}}
