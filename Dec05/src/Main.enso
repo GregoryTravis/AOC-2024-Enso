@@ -1,0 +1,39 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Examples
+import Standard.Visualization
+
+## ICON group
+successives node9 =
+    node10 = (pages-> 0.up_to (pages.length-1) . map (i-> [pages.at i, pages.at i+1])) node9
+    node10
+
+main =
+    node1 = Data.read '/Users/gmt/Desktop/small_input.txt'
+    node12 = Data.read '/Users/gmt/Desktop/input.txt'
+    node2 = node12.split '\n\n'
+    integer1 = node2.length
+    node3 = node2.at 0
+    node4 = node2.at 1
+    node5 = node3.split '\n' . map (x-> x.split '|' . map Integer.parse)
+    node6 = Hashset.from_vector node5
+    vector1 = node6.to_vector
+    node7 = node4.split '\n'
+    node8 = node7.take (node7.length - 1)
+    node9 = node8.map (x-> x.split ',' .  map Integer.parse)
+    node10 = Main.successives node9
+    node13 = node9.filter (pages-> (successives pages).all (pair-> node6.contains pair))
+    node18 = node13.map (x-> (length-> (length % 2) == 1) x.length) . all x->x
+    node19 = node13.map (x-> x.at (x.length.div 2))
+    node20 = node19.fold 0 (_+_)
+    text1 = "verify they're all of odd length"
+
+
+
+#### METADATA ####
+[[{"index":{"value":277},"size":{"value":5}},"92b99b09-1c45-4ae8-8e54-32cef6df217d"],[{"index":{"value":298},"size":{"value":79}},"db5e8a98-076c-43fd-b0d8-4e4a50d12adc"],[{"index":{"value":382},"size":{"value":6}},"f5450f4d-fb07-47f5-8818-b0bc63eb73cc"],[{"index":{"value":409},"size":{"value":46}},"49f948dd-c5a1-4fa1-bbd9-46e2013d73e7"],[{"index":{"value":469},"size":{"value":40}},"fb8c5888-1fca-46bd-8af2-e30b8442df79"],[{"index":{"value":522},"size":{"value":19}},"f0805768-e205-4b8f-b692-d89e8f26fd6b"],[{"index":{"value":557},"size":{"value":12}},"332d627f-1694-4227-b055-1c33b3a3831d"],[{"index":{"value":582},"size":{"value":10}},"6add24ea-b777-4dcc-8575-96bd607c0a21"],[{"index":{"value":605},"size":{"value":8}},"472a6683-c120-41c5-a05f-6cc731518b3f"],[{"index":{"value":605},"size":{"value":10}},"18a8de80-4470-4e87-88c9-db7ea967bb9d"],[{"index":{"value":628},"size":{"value":60}},"748906c1-1a61-4b71-9680-23eba378ddf5"],[{"index":{"value":701},"size":{"value":25}},"d63db436-245a-418f-957f-99020e9930a2"],[{"index":{"value":741},"size":{"value":15}},"9c99a707-b8c1-420d-adc5-62467d34cd77"],[{"index":{"value":769},"size":{"value":16}},"188a8803-6ed0-4c2c-9b25-5e152247736d"],[{"index":{"value":798},"size":{"value":29}},"457714ff-4f05-4e50-966b-fa1e5cff501c"],[{"index":{"value":840},"size":{"value":48}},"4f09384f-7608-4742-96dc-beb3994afa1f"],[{"index":{"value":902},"size":{"value":22}},"f7c9d864-6c73-40b8-bd84-0495d827d830"],[{"index":{"value":938},"size":{"value":75}},"952bc637-9e79-4cb0-bd68-2956726be4cb"],[{"index":{"value":1027},"size":{"value":54}},"58c47f9e-8603-414d-b63a-44d72fb8c830"],[{"index":{"value":1027},"size":{"value":60}},"92c6d59a-a235-4a2e-b82b-9a2e7746c3b3"],[{"index":{"value":1027},"size":{"value":65}},"2a0af6a8-923b-4ae0-933c-0338860243c7"],[{"index":{"value":1106},"size":{"value":38}},"e372dadd-7638-4c2f-9e8c-643bca3a9d37"],[{"index":{"value":1158},"size":{"value":19}},"fe1e4668-3217-4b89-8a27-28569cdcee5f"],[{"index":{"value":1190},"size":{"value":34}},"abaa894d-693e-4237-98ea-333f39cff76e"]]
+{"ide":{"node":{"92b99b09-1c45-4ae8-8e54-32cef6df217d":{"position":{"vector":[640,422]}},"db5e8a98-076c-43fd-b0d8-4e4a50d12adc":{"position":{"vector":[640,350]}},"f5450f4d-fb07-47f5-8818-b0bc63eb73cc":{"position":{"vector":[640,128]}},"49f948dd-c5a1-4fa1-bbd9-46e2013d73e7":{"position":{"vector":[-794,820]}},"fb8c5888-1fca-46bd-8af2-e30b8442df79":{"position":{"vector":[-402,820]}},"f0805768-e205-4b8f-b692-d89e8f26fd6b":{"position":{"vector":[-794,748]}},"332d627f-1694-4227-b055-1c33b3a3831d":{"position":{"vector":[-237,662]}},"6add24ea-b777-4dcc-8575-96bd607c0a21":{"position":{"vector":[-794,623]}},"18a8de80-4470-4e87-88c9-db7ea967bb9d":{"position":{"vector":[-516,623]}},"472a6683-c120-41c5-a05f-6cc731518b3f":{"position":{"vector":[-471,626]}},"748906c1-1a61-4b71-9680-23eba378ddf5":{"position":{"vector":[-794,377]}},"d63db436-245a-418f-957f-99020e9930a2":{"position":{"vector":[-794,326]}},"9c99a707-b8c1-420d-adc5-62467d34cd77":{"position":{"vector":[-794,183]}},"188a8803-6ed0-4c2c-9b25-5e152247736d":{"position":{"vector":[-269,494]}},"457714ff-4f05-4e50-966b-fa1e5cff501c":{"position":{"vector":[162,623]}},"4f09384f-7608-4742-96dc-beb3994afa1f":{"position":{"vector":[185,528]}},"f7c9d864-6c73-40b8-bd84-0495d827d830":{"position":{"vector":[720,278]}},"952bc637-9e79-4cb0-bd68-2956726be4cb":{"position":{"vector":[185,445]},"visualization":{"show":false,"width":588.953125,"height":261.62109375}},"2a0af6a8-923b-4ae0-933c-0338860243c7":{"position":{"vector":[1007,278]},"visualization":{"show":true}},"92c6d59a-a235-4a2e-b82b-9a2e7746c3b3":{"position":{"vector":[-173,-193]},"visualization":{"show":true}},"58c47f9e-8603-414d-b63a-44d72fb8c830":{"position":{"vector":[-173,-193]}},"e372dadd-7638-4c2f-9e8c-643bca3a9d37":{"position":{"vector":[185,350]}},"fe1e4668-3217-4b89-8a27-28569cdcee5f":{"position":{"vector":[185,254]},"visualization":{"show":true}},"abaa894d-693e-4237-98ea-333f39cff76e":{"position":{"vector":[1207,350]}}},"widget":{},"import":{},"snapshot":"eJyFUktP20AQvvtXjEBVbIE3cUKBHByJlqpwKD2kj0OprCFeOyvWu9buJDVVfzxyvH6gQHobfY957H6Z0QUsCVWKJmUf0HIQRakNAUrpZS/Yb/ggD9DXSPhwsMHVz+Xb5Getc8mTq1K8rVkq/SeT+Phihis70acKi1Jyu0f8EHaDUvxFElp53vEx3H78ege50ZvSs5vVilsrttyC0imfQ+wBwK6OJhCDX2LObbiACduUCWkHMMlVTuswCoBBgSX4IlzAr4ZDAnEKfX0S/Q6Cpv2guecVKNRwHsRQvyYzHFMYjb9bbuw4L2h8ze0j6XJsC5QyEarcEKOKRr11+l/vK67a1LiZLaUgGN2re9XwQhHPuYmcZOoO7ryzjkCCSQefDeGog987eNYPGrUPV4ULqFr8XwvfNvNZicbyoGt0DjHcoF1bTqwOSbLlK9KmGbJTNUC79zkj7TRdjwvHnQ2W6chLR14wqgPnN3VzPIQQ9avMnfKS7Z9xWp9x6I5dtr6gUGwvgb2mfeM5y4Qkbvow+kPXDgwYSlkLhAkX7vSVVoRC1QphgsHw9sho1u/uu0R3FbyDaQBxDFEAlXuBOu31nCpcVH27+SvtqjoAfutjqdjCdLDCdNJ65izTMoUJ+MlJ0giIV1R/4NGWG5E9Aa3508jw3WSdgU5TaNoeec/viIJM"}}
